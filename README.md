@@ -1,5 +1,7 @@
 # KabOCR — OCR libre pour le kabyle (écriture latine)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24111659.svg)](https://doi.org/10.5281/zenodo.24111659)
+
 **Essayer en ligne : https://yulliwasameur.github.io/kabocr/**. Déposez un PDF ou une image : vous obtenez le texte et un PDF cherchable. Tout se passe dans votre navigateur, et rien n'est envoyé.
 
 *English below.*
@@ -8,7 +10,7 @@
 
 | Dossier | Contenu | Licence |
 |---|---|---|
-| `docs/` | L'application web (une page, sans serveur) : pdf.js + tesseract.js + le modèle | Apache-2.0 (code) |
+| `docs/app/` | L’application web (une page, sans serveur) : pdf.js + tesseract.js + le modèle | Apache-2.0 (code) |
 | `models/` | Le modèle **KabOCR-Free v0.1** (`kabocr-free-v0.1.traineddata`, 3,5 Mo, pour Tesseract ≥ 4.1) | **CC BY-SA 4.0** |
 | `cli/kabocr.py` | Outil en ligne de commande : un PDF ou une image en entrée, un `.txt` et un PDF cherchable en sortie | Apache-2.0 |
 | `tool/` | `kabocr-eval` : mesure de la qualité d'un OCR kabyle (CER, WER, **DCER** sur les lettres kabyles, sosies, règles de qualité, statistiques par document) | Apache-2.0 |
@@ -52,15 +54,15 @@ KabOCR-Free bat le meilleur modèle public sur **chacun** des 39 documents de te
 
 ## Citer
 
-Voir `CITATION.cff`. Un DOI Zenodo est attribué à chaque version.
+Voir `CITATION.cff`. DOI de toutes les versions : [10.5281/zenodo.24111659](https://doi.org/10.5281/zenodo.24111659) ; version 0.1.0 : [10.5281/zenodo.24111660](https://doi.org/10.5281/zenodo.24111660).
 
-> Ameur, Y. (2026). *KabOCR: open OCR for Kabyle (Latin script)*, version 0.1.0 [Logiciel]. Zenodo.
+> Ameur, Y. (2026). *KabOCR: open OCR for Kabyle (Latin script)*, version 0.1.0 [Logiciel]. Zenodo. https://doi.org/10.5281/zenodo.24111659
 
 ## Licences
 
 - Code : Apache-2.0 (`LICENSE`).
 - Poids du modèle : CC BY-SA 4.0 (`LICENSE-MODEL.txt`). Le modèle a appris sur des phrases de Wikipédia en kabyle (CC BY-SA 4.0). Il dérive du modèle Tesseract `kab` de Bouaziz Ait Driss (Apache-2.0).
-- Bibliothèques fournies dans `docs/vendor/` : tesseract.js et pdf.js (Apache-2.0), pdf-lib (MIT). Voir `NOTICE.md`.
+- Bibliothèques fournies dans `docs/app/vendor/` : tesseract.js et pdf.js (Apache-2.0), pdf-lib (MIT). Voir `NOTICE.md`.
 
 ---
 
