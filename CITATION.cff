@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use KabOCR, please cite it as below."
+title: "KabOCR: open OCR for Kabyle (Latin script)"
+version: 0.1.0
+date-released: 2026-11-10
+license: Apache-2.0
+repository-code: "https://github.com/yulliwasameur/kabocr"
+url: "https://yulliwasameur.github.io/kabocr/"
+authors:
+  - family-names: Ameur
+    given-names: Yulliwas
+    affiliation: "Efrei Research Lab; Cnam, CEDRIC"
+keywords: [OCR, Kabyle, Taqbaylit, Berber, Amazigh, low-resource languages, Tesseract, evaluation]

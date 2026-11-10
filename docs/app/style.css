@@ -1,0 +1,33 @@
+:root{--bg:#fcfcfb;--card:#ffffff;--fg:#0b0b0b;--mut:#52514e;--line:#e2e0da;--acc:#2a78d6;--acc-fg:#ffffff;--bar:#e9e7e1}
+@media (prefers-color-scheme:dark){:root{--bg:#1a1a19;--card:#232322;--fg:#f0efec;--mut:#c3c2b7;--line:#3a3936;--acc:#3987e5;--acc-fg:#ffffff;--bar:#3a3936}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"DejaVu Sans",sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{padding-top:32px}
+h1{font-size:28px;margin:0 0 6px}
+h1 .sub{font-weight:400;color:var(--mut);font-size:18px}
+h2{font-size:18px;margin:0 0 10px}
+.lead{margin:0 0 16px;color:var(--fg)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:16px 0}
+#drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:2px dashed var(--line);border-radius:10px;padding:28px 12px;cursor:pointer;text-align:center}
+#drop.over,#drop:focus{border-color:var(--acc);outline:none}
+#drop input{position:absolute;width:1px;height:1px;opacity:0}
+.big{font-size:18px;font-weight:600}
+.hint{color:var(--mut);font-size:14px}
+.row{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.spread{justify-content:space-between}
+.opts{margin:12px 0}
+.opts summary{cursor:pointer;color:var(--mut)}
+.opts .row{margin-top:10px}
+input[type=text],select{font:inherit;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}
+button{font:inherit;padding:7px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);cursor:pointer}
+button:disabled{opacity:.5;cursor:default}
+button.primary{background:var(--acc);border-color:var(--acc);color:var(--acc-fg);font-weight:600;margin-top:12px}
+.bar{height:8px;background:var(--bar);border-radius:4px;overflow:hidden;margin-top:14px}
+#barfill{height:100%;width:0;background:var(--acc);transition:width .2s}
+textarea{width:100%;min-height:340px;font:16px/1.5 "DejaVu Sans","Noto Sans",system-ui,sans-serif;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);resize:vertical}
+pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:13px}
+.about ul{padding-left:18px;margin:0}
+.about li{margin:6px 0}
+a{color:var(--acc)}
+footer{padding:8px 16px 40px}

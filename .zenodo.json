@@ -1,0 +1,12 @@
+{
+  "title": "KabOCR: open OCR for Kabyle (Latin script) — web app, model, command line and evaluation toolkit",
+  "upload_type": "software",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "creators": [{"name": "Ameur, Yulliwas", "affiliation": "Efrei Research Lab; Cnam, CEDRIC"}],
+  "keywords": ["OCR", "Kabyle", "Taqbaylit", "Berber", "Amazigh", "low-resource languages", "Tesseract", "evaluation"],
+  "description": "<p>KabOCR is free OCR for Kabyle (Taqbaylit) in Latin script.</p><ul><li>A web application that runs entirely in the browser (PDF or image in, text and searchable PDF out): https://yulliwasameur.github.io/kabocr/</li><li>The KabOCR-Free v0.1 Tesseract model, trained only on openly licensed text (weights under CC BY-SA 4.0). It reaches 0.90 / 0.75 / 1.70 % character error rate on unseen real theses and books, against 1.45 / 1.36 / 2.58 % for the best public model measured.</li><li>A command-line tool.</li><li>kabocr-eval, an evaluation toolkit that reports CER, WER and DCER (errors on Kabyle-specific letters, split into missed and spurious), handles homoglyphs, applies ground-truth quality rules and computes document-level statistics.</li><li>The research scripts that reproduce the results.</li></ul><p>Page images and texts of copyrighted documents, and the models trained on them, are not included.</p>",
+  "access_right": "open",
+  "language": "eng",
+  "related_identifiers": [{"identifier": "https://github.com/yulliwasameur/kabocr", "relation": "isSupplementTo", "scheme": "url"}]
+}

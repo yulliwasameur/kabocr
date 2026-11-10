@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kabocr-eval"
+version = "0.1.0"
+description = "Evaluation toolkit for Kabyle OCR: CER, WER, DCER (missed/spurious Kabyle letters), homoglyph-aware normalisation, ground-truth quality rules, document-level statistics"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [{name = "Yulliwas Ameur"}]
+requires-python = ">=3.9"
+dependencies = []
+optional-dependencies = {fast = ["rapidfuzz>=3"]}
+
+[project.scripts]
+kabocr-eval = "kabocr_eval.cli:main"
+
+[tool.setuptools]
+packages = ["kabocr_eval"]

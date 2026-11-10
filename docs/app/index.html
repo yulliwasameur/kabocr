@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KabOCR — OCR du kabyle</title>
+<meta name="description" content="KabOCR : reconnaissance de texte (OCR) pour le kabyle en écriture latine. Gratuit, libre, tout se passe dans votre navigateur.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap">
+  <h1>KabOCR <span class="sub">OCR du kabyle · Taqbaylit</span></h1>
+  <p class="lead">Déposez un PDF ou une image en kabyle (écriture latine). Vous obtenez le texte, prêt à copier, à télécharger ou à rechercher.
+  <strong>Rien n'est envoyé sur Internet</strong> : tout se passe dans votre navigateur.</p>
+</header>
+
+<main class="wrap">
+  <section class="card" id="input">
+    <label id="drop" for="file" tabindex="0">
+      <span class="big">Choisir un PDF ou une image</span>
+      <span class="hint">ou glisser-déposer ici · PDF, PNG, JPG</span>
+      <input id="file" type="file" accept="application/pdf,image/png,image/jpeg">
+    </label>
+    <div id="fileinfo" class="hint" aria-live="polite"></div>
+    <details class="opts">
+      <summary>Options</summary>
+      <div class="row">
+        <label>Pages <input id="pages" type="text" placeholder="toutes (ex. 1-5, 8)" size="18"></label>
+        <label>Résolution
+          <select id="dpi"><option value="200">200 dpi (rapide)</option><option value="300" selected>300 dpi (recommandé)</option></select>
+        </label>
+        <label><input id="fold" type="checkbox" checked> Corriger les sosies (ε → ɛ, γ → ɣ…)</label>
+        <label><input id="mkpdf" type="checkbox" checked> Préparer un PDF cherchable</label>
+      </div>
+    </details>
+    <button id="run" class="primary" disabled>Lancer l'OCR</button>
+    <div id="progress" hidden>
+      <div class="bar"><div id="barfill"></div></div>
+      <div id="status" class="hint" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="card" id="output" hidden>
+    <div class="row spread">
+      <h2>Texte reconnu</h2>
+      <div class="row">
+        <button id="copy">Copier</button>
+        <button id="dltxt">Télécharger .txt</button>
+        <button id="dlpdf" disabled>PDF cherchable</button>
+      </div>
+    </div>
+    <textarea id="text" spellcheck="false" lang="kab" aria-label="Texte reconnu"></textarea>
+    <p class="hint">Relisez toujours le texte : l'OCR fait encore des erreurs, surtout sur les scans abîmés, l'écriture manuscrite et les lettres rares.</p>
+  </section>
+
+  <section class="card">
+    <h2>Citer KabOCR</h2>
+    <p>Si vous utilisez ce texte dans un travail, merci de citer le logiciel :</p>
+    <pre id="cite">Ameur, Y. (2026). KabOCR: open OCR for Kabyle (Latin script), version 0.1.0 [Software]. Zenodo. DOI: __DOI__</pre>
+    <button id="copycite">Copier la référence</button>
+    <details><summary>BibTeX</summary>
+<pre id="bibtex">@software{ameur_kabocr_2026,
+  author    = {Ameur, Yulliwas},
+  title     = {{KabOCR}: open {OCR} for {Kabyle} (Latin script)},
+  version   = {0.1.0},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {__DOI__},
+  url       = {https://yulliwasameur.github.io/kabocr/}
+}</pre></details>
+  </section>
+
+  <section class="card about">
+    <h2>À propos</h2>
+    <ul>
+      <li><strong>Modèle</strong> : <em>KabOCR-Free</em> v0.1. Il a appris uniquement sur des données libres : 13 095 phrases de Wikipédia en kabyle, dessinées avec 77 polices libres. Il part du modèle Tesseract <code>kab</code> d'AitBAD (Apache-2.0).</li>
+      <li><strong>Précision</strong> mesurée sur de vraies lignes imprimées jamais vues : environ 0,9 % d'erreur par caractère sur des mémoires, 1,7 % sur des livres. C'est deux à trois fois moins que l'outil généraliste de référence, et mieux que les modèles kabyles publics testés.</li>
+      <li><strong>Limites</strong> : imprimé en écriture latine seulement. Ni tifinagh, ni arabe, ni manuscrit. La lettre ţ et la notation phonétique (ə, ṯ, ḏ…) ne sont pas encore reconnues. Les scans flous ou très petits font monter les erreurs.</li>
+      <li><strong>Vie privée</strong> : le fichier est lu et traité dans votre navigateur. Aucun envoi, aucun compte.</li>
+      <li><strong>Licences</strong> : code sous Apache-2.0 ; poids du modèle sous CC BY-SA 4.0 (données Wikipédia). Bibliothèques : tesseract.js et pdf.js (Apache-2.0), pdf-lib (MIT).</li>
+      <li><strong>Code et données</strong> : <a href="https://github.com/yulliwasameur/kabocr">github.com/yulliwasameur/kabocr</a> · Auteur : <a href="https://yulliwasameur.github.io/">Yulliwas Ameur</a> (Efrei Research Lab, Cnam-CEDRIC).</li>
+    </ul>
+  </section>
+</main>
+<footer class="wrap hint">KabOCR v0.1.0 · Tanemmirt i wid yuran Wikipedia s teqbaylit.</footer>
+
+<script src="vendor/pdf.min.js"></script>
+<script src="vendor/tesseract.min.js"></script>
+<script src="vendor/pdf-lib.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
